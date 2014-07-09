@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ArticleCurrentSummaryVM>
+
+@{
+    ViewBag.Title = "[[[Home]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var groupedArticles = (from acs in Model group acs by acs.Group).OrderBy(x => x.Key.SortOrder);
+}
+
+<div class="jumbotron">
+    <h1>[[[Manifesto]]]</h1>
+    <p class="lead">[[[Together we are the Wisdom and the Power!]]]</p>
+    <p class="lead">[[[And more!]]]</p>
+    <p><a href="/TechArticles" class="">Technical page &raquo;</a></p>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">[[[Articles]]]</div>
+    <div class="panel-body">
+@foreach (var group in groupedArticles)
+{
+        <h4>
+            @group.Key.Name
+        </h4>
+        @*<div class="col-md-offset-1 col-md-11">*@
+            <table class="table table-hover">
+    @foreach (var item in group)
+    {
+                <tr class="action-redirect" data-action="/Articles/Current" data-id="@item.ArticleID">
+                    <td>
+                        <p><strong>
+                            <a href="/Articles/Current/@item.ArticleID">@item.Title</a>
+                        </strong></p>
+                        <p><small>@item.DisplayArticleStatus - @item.DisplayCurrentVersionStatus - @item.DisplayNewVersionStatus</small></p>
+                    </td>
+                </tr>
+    }
+            </table>
+        @*</div>*@
+}
+    </div>
+</div>

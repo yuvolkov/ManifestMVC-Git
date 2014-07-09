@@ -1,0 +1,47 @@
+﻿    @model IEnumerable<DataLayer.ViewModels.ArticleVM>
+
+@{
+    ViewBag.Title = "[[[Index]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>[[[Index]]]</h2>
+
+<p>
+    <a class="action-modal-ajax" data-action="/Article/Edit" data-id="0" href="#">[[[Create]]]</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => modelItem.DateCreated)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                <a class="action-modal-ajax" data-action="/Article/Edit" data-id="@item.ID" href="#">[[[Edit]]]</a> |
+                <a class="action-modal-ajax" data-action="/Article/View" data-id="@item.ID" href="#">[[[Details]]]</a> |
+                <a class="action-modal-ajax" data-action="/Article/Close" data-id="@item.ID" href="#">[[[Close]]]</a>
+            </td>
+        </tr>
+    }
+
+</table>
+

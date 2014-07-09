@@ -1,0 +1,132 @@
+﻿@model Tuple<bool, IEnumerable<AlterationWithVotesVM>>
+
+@{
+    bool votingIsOpen = Model.Item1;
+    var alterationsVotes = Model.Item2;
+}
+
+
+@if (!alterationsVotes.Any())
+{
+    <label class="help-block">([[[No alterations]]])</label>
+}
+else
+{
+    foreach (var altVt in alterationsVotes)
+    {
+        var id = altVt.ID;
+        bool alreadyVoted  = altVt.VoteResult != null;    
+
+        string alteration_class = "alert alert-info";
+        if (altVt.IsSandbox)
+        {
+            alteration_class = "well well-sm";
+        }
+        else if (altVt.IsRejected)
+        {
+            alteration_class = "alert alert-danger";
+        }
+        else if (altVt.IsAccepted)
+        {
+            alteration_class = "alert alert-success";
+        }
+    
+        
+        string accept_vote_color = "muted";
+        string reject_vote_color = "muted";
+
+        string vote_tooltip = null;
+        
+        if (votingIsOpen && 
+            ViewBag.IsAuthenticated && 
+            altVt.VoteResult == null)
+        {
+            vote_tooltip = "[[[Not yet voted]]]";
+            
+            accept_vote_color = "primary";
+            reject_vote_color = "primary";
+        }
+        else
+        {
+            if (!ViewBag.IsAuthenticated)
+            {
+                vote_tooltip = "[[[Please login to vote]]]";
+            }
+
+            if (!votingIsOpen)
+            {
+                vote_tooltip = "[[[Voting is closed]]]";
+            }
+                       
+            if (altVt.VoteResult == VoteResult.Accept)
+            {
+                accept_vote_color = "success";
+                //reject_vote_color = "hide";
+
+                vote_tooltip = "<i class=\"fa fa-check-circle fa-2x text-" + accept_vote_color + "\" style=\"vertical-align: middle\"></i> [[[Your vote - accept]]]";
+            }
+            if (altVt.VoteResult == VoteResult.Reject)
+            {
+                //accept_vote_color = "hide";
+                reject_vote_color = "danger";
+
+                vote_tooltip = "<i class=\"fa fa-times-circle fa-2x text-"+reject_vote_color+"\" style=\"vertical-align: middle\"></i> [[[Your vote - reject]]]";
+            }
+        }
+    
+        @*<div class="panel panel-default">
+            <div class="panel-body">*@
+        <div class="@alteration_class">
+            <div class="col-md-2 has-tooltip"
+                 data-toggle="tooltip" title="@vote_tooltip">
+    @if (votingIsOpen)
+    {
+                <div class="col-md-12 text-center">
+                    <a href="#" class="action-ajax-popover"
+                       data-action="/Articles/_ConfirmVote"
+                       data-id="@id" 
+                       data-params='{"votingIsOpen":"@(votingIsOpen)", "alreadyVoted":"@(alreadyVoted)", "vote":"accept"}'
+                       data-container="body" data-placement="right" data-toggle="popover">
+                        <i class="fa fa-chevron-up fa-2x text-@accept_vote_color"></i>
+                    </a>
+                </div>
+    }
+                <div class="col-md-12 text-center">
+                    <span class="badge alert-success">@altVt.TotalAcceptVotes</span>
+                    /
+                    <span class="badge alert-danger">@altVt.TotalRejectVotes</span>
+                </div>
+    @if (votingIsOpen)
+    {
+                <div class="col-md-12 text-center">
+                    <a href="#" class="action-ajax-popover"
+                       data-action="/Articles/_ConfirmVote"
+                       data-id="@id"
+                       data-params='{"votingIsOpen":"@(votingIsOpen)", "alreadyVoted":"@(alreadyVoted)", "vote":"reject"}'
+                       data-container="body" data-placement="right" data-toggle="popover">
+                        <i class="fa fa-chevron-down fa-2x text-@reject_vote_color"></i>
+                    </a>
+                </div>
+    }
+                <div><p><strong>[[[Author]]]: </strong>@altVt.AuthorName</p></div>
+            </div>
+            <div class="container col-md-10" >
+                <div class="form-group">
+                    <label class="">[[[Alteration Text]]]</label>
+                    <div class="help-block">
+                        @Html.Raw(altVt.Text.Replace("\n", "<br>"))
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="">[[[Alteration Comment]]]</label>    
+                    <div class="help-block">
+                        @Html.Raw(altVt.Justification.Replace("\n", "<br>"))
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            @*</div>*@
+        </div>
+    }
+}
+    

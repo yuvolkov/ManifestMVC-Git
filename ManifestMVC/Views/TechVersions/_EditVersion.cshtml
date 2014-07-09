@@ -1,0 +1,46 @@
+﻿@model ArticleVersionVM
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.ArticleID)
+
+    <div class="pull-right">
+        <button type="submit" class="btn btn-primary">
+            [[[Save]]]
+        </button>
+        <button type="button" class="btn action-ajax-container" 
+                data-action="/TechVersions/_ViewVersion" data-id="@Model.ID" data-params='{"articleID": "@(Model.ArticleID)"}'
+                data-container="#ajax-container">
+            [[[Cancel]]]
+        </button>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>[[[Previous Version]]]</label>
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Text, "[[[New Version]]]")
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6">
+            @if (Model.SourceTextWithMarkup == null) {
+                <label class="help-block">([[[No previous version exists]]])</label>
+            }
+            else {
+                @Html.Raw(Model.SourceTextWithMarkup.Replace("\n", "<br>"))
+            }
+        </div>
+        <div class="form-group col-md-6">
+            @Html.ValidationMessageFor(model => model.Text)
+            @Html.TextAreaFor(model => model.Text, new { @class="form-control", rows=10 })
+        </div>
+    </div>
+}

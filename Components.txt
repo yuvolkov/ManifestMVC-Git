@@ -1,0 +1,3 @@
+http://habrahabr.ru/post/143024/
+	PagedList (MVC3) Ч очень удобный пакет дл€ Ђлистани€ страницї
+	Lucene (SimpleLucene) Ч поиск

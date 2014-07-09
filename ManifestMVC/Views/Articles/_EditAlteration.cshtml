@@ -1,0 +1,101 @@
+﻿@model ModelWithAction<AlterationVM>
+
+@{
+    string tab_hide_modifier = (Model.Action == "new" ? "active" : "");
+    string tab_show_modifier = (Model.Action == "new" ? "" : "active");
+    string authorized_actions_modifier = (ViewBag.IsAuthenticated ? "" : "disabled");
+}
+
+
+<p class="container">
+<div class="tab-content">
+    <div class="tab-pane @tab_hide_modifier" id="hide-form">
+        <div class="pull-right">
+            <a href="#show-form" class="btn btn-success @authorized_actions_modifier" data-toggle="tab">
+                [[[New Alteration]]]
+            </a>
+        </div>
+    </div>
+    <div class="tab-pane @tab_show_modifier" id="show-form">
+ 
+@if (Model.Action == "new" || Model.Action == "edit") {
+        <h4>[[[New Alteration]]]</h4>
+}
+@if (Model.Action == "confirm")
+{
+        <h4>[[[Confirm new Alteration]]]</h4>
+}
+
+        @using (Html.BeginForm("_EditAlteration", "Articles"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(x => x.Action)
+            @Html.HiddenFor(x => x.VM.ID)
+            @Html.HiddenFor(x => x.VM.ArticleVersionID)
+            
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.VM.Text, "[[[Alteration Text]]]", new { @class = "control-label col-md-1 col-md-offset-2" })
+                    <div class="col-md-7">
+@if (Model.Action == "new" || Model.Action == "edit")
+{
+                        @Html.TextAreaFor(model => model.VM.Text, 5, 5, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.VM.Text)
+}
+@if (Model.Action == "confirm") {
+                        @Html.HiddenFor(model => model.VM.Text)
+                        @Html.Raw(Model.VM.Text.Replace("\n","<br>"))
+}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.VM.Justification, "[[[Alteration Comment]]]", new { @class = "control-label col-md-1 col-md-offset-2" })
+                    <div class="col-md-7">
+@if (Model.Action == "new" || Model.Action == "edit")
+{
+                        @Html.TextAreaFor(model => model.VM.Justification, 5, 5, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.VM.Justification)
+}
+@if (Model.Action == "confirm") {
+                        @Html.HiddenFor(model => model.VM.Justification)
+                        @Html.Raw(Model.VM.Justification.Replace("\n", "<br>"))
+}
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        
+            <div class="pull-right">
+@if (Model.Action == "new" || Model.Action == "edit")
+{
+                <button type="submit" id="btnConfirm" name="submitButton" value="confirm" class="btn btn-primary">
+                    [[[Confirm]]]
+                </button>
+                <a href="#hide-form" class="btn btn-default" data-toggle="tab">
+                    [[[Cancel]]]
+                </a>
+}
+@if (Model.Action == "confirm") {
+                <button type="submit" id="btnEdit" name="submitButton" value="edit" class="btn btn-primary">
+                    [[[Back to editing]]]
+                </button>
+                <button type="submit" id="btnSave" name="submitButton" value="save" class="btn btn-primary">
+                    [[[Save]]]
+                </button>
+                <button type="submit" id="btnCancel" name="submitButton" value="new" class="btn btn-default">
+                    [[[Cancel]]]
+                </button>
+}
+            </div>
+
+        }
+
+    </div>
+    <div class="clearfix"></div>
+</div>
+</p>

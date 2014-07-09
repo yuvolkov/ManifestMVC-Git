@@ -1,0 +1,7 @@
+IIS:
+Optimizing IIS Performance: http://msdn.microsoft.com/en-us/library/ee377050.aspx
+
+Caching:
+Stackoverflow: http://meta.stackexchange.com/questions/69164/does-stack-overflow-use-caching-and-if-so-how/69172#69172
+               http://s3.amazonaws.com/hanselminutes/hanselminutes_0134.pdf
+

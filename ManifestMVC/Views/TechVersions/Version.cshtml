@@ -1,0 +1,46 @@
+﻿@model ModelWithAction<Tuple<ArticleVersionVM, IEnumerable<AlterationWithVotesVM>>>
+
+@{
+    ViewBag.Title = "[[[Technical Version]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var action = Model.Action;
+    var version = Model.VM.Item1;
+    var alterations = Model.VM.Item2;
+}
+
+<h2>@(version.ID == 0 ? "[[[New Version]]]" : "[[[Version]]] - " + version.VersionString)</h2>
+
+<ul class="pager">
+  <li class="previous">
+    <a href="/TechArticles/VersionsIndex/@(version.ArticleID)">&larr; [[[Back]]]</a>
+  </li>
+</ul>
+
+
+<div id='ajax-container'></div>
+
+<label>[[[Accepted alterations]]]</label>
+
+@{
+    // no voting
+    Html.RenderPartial("_ViewAlterations", Tuple.Create(false, alterations), new ViewDataDictionary() { { "IsAuthenticated", ViewData["IsAuthenticated"] } });
+}
+
+
+@section Scripts {
+    @if (action == "view") {
+        <script>
+            $(document).ready(function () {
+                AjaxActions.fireAjaxAction("/TechVersions/_ViewVersion", "@version.ID", {articleID: @(version.ArticleID)}, "#ajax-container");
+            });
+        </script>
+    }
+    @if (action == "edit") {
+        <script>
+            $(document).ready(function () {
+                AjaxActions.fireAjaxAction("/TechVersions/_EditVersion", "@version.ID", {articleID: @(version.ArticleID)}, "#ajax-container");
+            });
+        </script>
+    }
+}

@@ -1,0 +1,49 @@
+﻿@model DataLayer.ViewModels.ArticleVM
+
+@{
+    ViewBag.Title = "[[[Closing]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>[[[Closing]]]</h2>
+
+<h3>[[[Are you sure you want to close it?]]]</h3>
+<div>
+    <h4>[[[Article]]]</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.DateCreated)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="[[[Close]]]" class="btn btn-default" /> |
+            @Html.ActionLink("[[[Back to List]]]", "Index")
+        </div>
+    }
+</div>

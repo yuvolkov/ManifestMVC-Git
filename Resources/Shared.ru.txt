@@ -1,0 +1,8 @@
+Action_Index=Список
+Action_BackToList=Назад к списку
+Action_Create=Создать
+Action_Edit=Редактировать
+Action_Close=Закрыть
+Action_Details=Подробнее
+Action_Save=Сохранить
+Statement_CloseConfirmation=Вы уверены, что хотите закрыть это?

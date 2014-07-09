@@ -1,0 +1,8 @@
+Name_Article=Статья
+Field_Title=Название
+Field_Description=Описание
+Field_DateCreated=Дата создания
+Field_DateClosed=Дата закрытия
+Validation_TitleRequired=Необходимо название!
+Validation_TitleLong=Название слишком длинное!
+Validation_DescriptionLong=Описание слишком длинное!

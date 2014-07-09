@@ -1,0 +1,8 @@
+Name_Article=Article
+Field_Title=Article title
+Field_Description=Article description
+Field_DateCreated=Article created at
+Field_DateClosed=Article closed at
+Validation_TitleRequired=Article title is required!
+Validation_TitleLong=Article title is too long!
+Validation_DescriptionLong=Article description is too long!

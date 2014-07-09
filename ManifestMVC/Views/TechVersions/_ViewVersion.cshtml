@@ -1,0 +1,83 @@
+﻿@model ArticleVersionVM
+
+<!-- Nav tabs -->
+<div class="row">
+    <ul class="nav nav-pills pull-left">
+      <li class="active"><a href="#view" data-toggle="tab">[[[View]]]</a></li>
+      <li><a href="#compare" data-toggle="tab">[[[Compare]]]</a></li>
+      @*<li><a href="#edit" data-toggle="tab">[[[Edit]]]</a></li>*@
+    </ul>
+    @if (Model.CanEdit) {
+        <div class="pull-right">
+            <button type="button" class="btn btn-warning action-ajax-container" 
+                    data-action="/TechVersions/_EditVersion" data-id="@Model.ID" data-params='{"articleID": "@(Model.ArticleID)"}'
+                    data-container="#ajax-container">
+                [[[Edit Article]]]
+            </button>
+        @if (Model.VersionString == "1.0") {
+            <button type="button" class="btn btn-success action-ajax-modal" 
+                    data-action="/TechVersions/_ConfirmAction" data-id="@Model.ID"  data-params='{"act": "updateCurrent"}'>
+                [[[Publish first version]]]
+            </button>
+        }
+        else {
+            <button type="button" class="btn btn-success action-ajax-modal" 
+                    data-action="/TechVersions/_ConfirmAction" data-id="@Model.ID"  data-params='{"act": "review"}'>
+                [[[Start review]]]
+            </button>
+        }
+        </div>
+    }
+</div>
+
+<div class="clearfix"></div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="view">
+        <div class="row col-md-8 col-md-offset-2">
+            <label>@Model.DisplayStatus</label>
+            <div>
+                @Html.Raw(Model.Text.Replace("\n","<br>"))
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="compare">
+        <div class="col-md-6">
+            <label>[[[Previous Version]]]</label>
+        </div>
+        <div class="col-md-6">
+            <label>@Model.DisplayStatus</label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6">
+            @if (Model.SourceTextWithMarkup == null) {
+                <label class="help-block">([[[No previous version exists]]])</label>
+            }
+            else {
+                @Html.Raw(Model.SourceTextWithMarkup.Replace("\n", "<br>"))
+            }
+        </div>
+        <div class="col-md-6">
+            @Html.Raw(Model.TextWithMarkup.Replace("\n", "<br>"))
+        </div>
+    </div>
+    <div class="clearfix"></div>
+@*@if (Model.CanEdit) {
+    <div class="tab-pane" id="edit">
+        <table class="table col-md-8 col-md-offset-2">
+            <tr>
+                <th>[[[Previous Version]]]</th>
+                <th>[[[Current Version]]]</th>
+            </tr>
+            <tr>
+                <td>@Model.SourceTextWithMarkup</td>
+                <td>
+                    @Html.TextAreaFor(model => model.Text, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Text)
+                </td>
+            </tr>
+        </table>
+    </div>
+}*@
+</div>

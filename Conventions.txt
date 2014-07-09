@@ -1,0 +1,30 @@
+Links for an ongoing research:
+  https://github.com/scottksmith95/LINQKit
+
+
+DataModels:  ClassDM
+  All actions (they are acted upon) take for granted that all enviroment checks have already been made.
+   That is accepted, because Entity is responsible only for itself and its children.
+   And being an internal class, it is accessible only from DataLayer, and it's own layer will be very intelligent.
+
+ViewModels as Projections: ClassWithFooVM
+  Entities at different stages are completely different objects, with different data and different logic.
+   So it is only natural to represent them as different classes, with specific logic and data.
+
+Rules for entity manipulation:
+  No anemic models - not the Repository moving thins around, but delegating to Entities with embedded Logic.
+  Set of rules:
+	- simplistic
+	- optimistic-throws
+	- enviroment-ok
+	- down-the-chain-delegating
+	- no-db-optimizing
+
+DB and Transaction revelations:
+  We have set Transaction Isolation Level to "Read Commited Snapshot". It is more suited to heavy read-oriented Web-applications (http://blog.codinghorror.com/deadlocked/).
+  EF by default creates a transaction only for SaveChanges, and does all updating in one transaction.
+  So when we query data prior to modifying and saving it (Query data - Modify data - SaveChanges), then queried data can become out-of-date at the time ofsaving.
+  And with "Read Commited" we would gain nothing in wrapping reads and writes in a transaction (so with "Read Commited" transactions are for batch writes only).
+  So we can employ our current strategy with Views containing business logic and DMs containing update logic, and query both for Views and DMs and map them to one another.
+   This can yield inconsistencies between Views and DMs, but the same inconsistencies could arise from N+1 SQL queries by EF and from inconsistencies
+    arising after querying and before SaveChanges.

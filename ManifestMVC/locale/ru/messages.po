@@ -1,0 +1,562 @@
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:123
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:94
+msgid "%0 days left before altering"
+msgstr "осталось %0 дней до окончания внесения правок"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:144
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:89
+msgid "%0 days left before review ending"
+msgstr "осталось %0 дней до окончания одобрения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\About.cshtml:2
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:50
+msgid "About"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:42
+msgid "Accept"
+msgstr "Принять"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:16
+msgid "Accept Alteration?"
+msgstr "Принять правку?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewCurrent.cshtml:45
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:124
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\Version.cshtml:23
+msgid "Accepted alterations"
+msgstr "Принятые правки"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:34
+msgid "Add New Article"
+msgstr "Добавить новую статью"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:45
+msgid "Add New Article Version"
+msgstr "Добавить новую версию статьи"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:142
+msgid "After you have carefuly reviewed new article version with new altertions, please consider the following:"
+msgstr "После внимательного ознакомления с новой версией статьи, с внесенными правками, пожалуйста, обдумайте:"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:12
+msgid "Already voted!"
+msgstr "Уже проголосовано!"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:56
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:121
+msgid "Alteration Comment"
+msgstr "Комментарий к правке"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:41
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:115
+msgid "Alteration Text"
+msgstr "Текст правки"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:126
+msgid "Altering current version %0"
+msgstr "В процессе изменения текущей версии %0"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Index.cshtml:13
+msgid "And more!"
+msgstr "И не только!"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:103
+msgid "Archived"
+msgstr "Заархивирована"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Close.cshtml:10
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_CloseArticle.cshtml:25
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_CloseArticle.cshtml:25
+msgid "Are you sure you want to close it?"
+msgstr "Вы уверены что хотите закрыть это?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:49
+msgid "Are you sure you want to end review now?"
+msgstr "Вы уверены, что хотите закончить процесс одобрения?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:43
+msgid "Are you sure you want to publish this version as a first version?"
+msgstr "Вы уверены, что хотите опубликовать эту версию статьи, как первую?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:37
+msgid "Are you sure you want to send it to review?"
+msgstr "Уверены ли вы, что хотитие отправить на одобрение?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:54
+msgid "Are you sure you want to start altering now?"
+msgstr "Уверены ли вы, что хотите начать изменение версии прямо сейчас?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Close.cshtml:12
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Create.cshtml:16
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Current.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Edit.cshtml:16
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\View.cshtml:4
+msgid "Article"
+msgstr "Статья"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:104
+msgid "Article is Active"
+msgstr "Статья активна"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:107
+msgid "Article is Closed"
+msgstr "Статья закрыта"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:135
+msgid "Article Version %0 review"
+msgstr "Одобрение версии %0"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:41
+msgid "Article Versions"
+msgstr "Версии статьи"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Index.cshtml:18
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:32
+msgid "Articles"
+msgstr "Статьи"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:111
+msgid "Author"
+msgstr "Автор"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Current.cshtml:33
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:8
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:12
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\Version.cshtml:16
+msgid "Back"
+msgstr "Назад"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:85
+msgid "Back to editing"
+msgstr "Назад к редактированию"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Close.cshtml:46
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Create.cshtml:45
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Details.cshtml:42
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Edit.cshtml:54
+msgid "Back to List"
+msgstr "Назад к списку"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:97
+msgid "Being altered"
+msgstr "В процессе изменения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_CloseArticle.cshtml:31
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:80
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:91
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditArticle.cshtml:48
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:46
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:64
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_CloseArticle.cshtml:31
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_EditArticle.cshtml:57
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:62
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_EditVersion.cshtml:19
+msgid "Cancel"
+msgstr "Отмена"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ProcessPendingChanges.cshtml:6
+msgid "Changes applied"
+msgstr "Изменения внесены"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Close.cshtml:45
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Index.cshtml:41
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\View.cshtml:43
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewPartial.cshtml:38
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ProcessPendingChanges.cshtml:19
+msgid "Close"
+msgstr "Закрыть"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_CloseArticle.cshtml:6
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_CloseArticle.cshtml:30
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:25
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_CloseArticle.cshtml:6
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_CloseArticle.cshtml:30
+msgid "Close Article"
+msgstr "Закрыть статью"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Close.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Close.cshtml:8
+msgid "Closing"
+msgstr "Закрытие"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:80
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:7
+msgid "Compare"
+msgstr "Сравнить"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:77
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:61
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:26
+msgid "Confirm new Alteration"
+msgstr "Подтвердить новую правку"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Contact.cshtml:2
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:53
+msgid "Contact"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Create.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Create.cshtml:8
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Create.cshtml:38
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Index.cshtml:11
+msgid "Create"
+msgstr "Создать"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditArticle.cshtml:6
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_EditArticle.cshtml:6
+msgid "Create New Article"
+msgstr "Создать новую статью"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:93
+msgid "Current"
+msgstr "Текущая"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:71
+msgid "Current Version"
+msgstr "Текущая версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:122
+msgid "Current version %0"
+msgstr "Текущая версия %0"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVM.cs:28
+msgid "Description"
+msgstr "Описание"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVM.cs:29
+msgid "Description too Long!"
+msgstr "Описание слишком длинное!"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Details.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Details.cshtml:8
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Details.cshtml:11
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Index.cshtml:40
+msgid "Details"
+msgstr "Подробности"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Details.cshtml:41
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Edit.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Edit.cshtml:8
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Index.cshtml:39
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:8
+msgid "Edit"
+msgstr "Редактировать"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditArticle.cshtml:6
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:22
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_EditArticle.cshtml:6
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:15
+msgid "Edit Article"
+msgstr "Редактировать статью"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ListVersions.cshtml:21
+msgid "Edit Article Version"
+msgstr "Редактировать версию статьи"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\FAQ.cshtml:2
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:51
+msgid "FAQ"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVM.cs:20
+msgid "Group"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_LoginPartial.cshtml:16
+msgid "Hello"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Index.cshtml:4
+msgid "Home"
+msgstr "Домой"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Index.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Index.cshtml:8
+msgid "Index"
+msgstr "Указатель"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:143
+msgid "Is the new version better than previous one?"
+msgstr "Данная версия лучше предыдущей?"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Index.cshtml:11
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:26
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:67
+msgid "Manifesto"
+msgstr "Манифест"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:6
+msgid "Manifesto of Ukraine"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleGroupVM.cs:22
+msgid "Name"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:8
+msgid "Need to login to vote!"
+msgstr "Необходимо войти, чтобы проголосовать!"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:15
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:22
+msgid "New Alteration"
+msgstr "Новая правка"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewCurrent.cshtml:41
+msgid "New alterations"
+msgstr "Новые правки"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:51
+msgid "New version"
+msgstr "Новая версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\Version.cshtml:12
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_EditVersion.cshtml:30
+msgid "New Version"
+msgstr "Новая Версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewCurrent.cshtml:19
+msgid "New version is in process, please wait until all accepted alterations get incorporated"
+msgstr "Новая версия в процессе подготовки, пожалуйста, подождите, пока все принятые правки не будут внесены."
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:176
+msgid "No"
+msgstr "Нет"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:11
+msgid "No alterations"
+msgstr "Нет правок"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:118
+msgid "No current versions"
+msgstr "Нет текущих версий"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:160
+msgid "No new versions"
+msgstr "Нет новых версий"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:110
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_EditVersion.cshtml:35
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:55
+msgid "No previous version exists"
+msgstr "Не существует предыдущей версии"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:140
+msgid "No published new versions"
+msgstr "Нет опубликованных новых версий"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:40
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:44
+msgid "Not yet voted"
+msgstr "Еще не проголосовано"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:49
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:53
+msgid "Please login to vote"
+msgstr "Пожалуйста войдите, чтобы проголосовать"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:84
+msgid "Preparing new version"
+msgstr "Готовится новая версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:163
+msgid "Preparing new version %0"
+msgstr "Готовится новая версия %0"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:101
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_EditVersion.cshtml:27
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:47
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:70
+msgid "Previous Version"
+msgstr "Предыдущая версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:23
+msgid "Process pending changes"
+msgstr "Внести необходимые изменения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:12
+msgid "Publish as a first version"
+msgstr "Опубликовать, как первую версию"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:20
+msgid "Publish first version"
+msgstr "Опубликовать первую версию"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:60
+msgid "Reject"
+msgstr "Отклонить"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:20
+msgid "Reject Alteration?"
+msgstr "Отклонить правку"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:100
+msgid "Rejected"
+msgstr "Отклонено"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:137
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:157
+msgid "rejected %0 times"
+msgstr "Отклонено %0 раз"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleGroupVM.cs:23
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:136
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVM.cs:24
+msgid "Required"
+msgstr "Необходимо"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Current.cshtml:26
+msgid "Review new version"
+msgstr "Одобрить новую версию"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:150
+msgid "Review results"
+msgstr "Результаты одобрения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:143
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleCurrentSummaryVM.cs:166
+msgid "Reviewing new version %0"
+msgstr "В процессе одобрения новой версии %0"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Edit.cshtml:47
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditAlteration.cshtml:88
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_EditArticle.cshtml:47
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_EditArticle.cshtml:56
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_EditVersion.cshtml:14
+msgid "Save"
+msgstr "Сохранить"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:8
+msgid "Send to review"
+msgstr "Отправить на одобрение"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:38
+msgid "Show closed"
+msgstr "Показать закрытое"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:50
+msgid "Show rejected"
+msgstr "Показать отклоненное"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Slides.cshtml:2
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_Layout.cshtml:52
+msgid "Slides"
+msgstr ""
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:26
+msgid "Start review"
+msgstr "Начать добрение"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ProcessPendingChanges.cshtml:15
+msgid "Successful"
+msgstr "Успешно"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:4
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\VersionsIndex.cshtml:8
+msgid "Technical article versions index"
+msgstr "Технический список версий статей"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:2
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\ArticlesIndex.cshtml:14
+msgid "Technical Articles Index"
+msgstr "Технический список статей"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\Version.cshtml:4
+msgid "Technical Version"
+msgstr "Техническая версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVM.cs:23
+msgid "Title"
+msgstr "Заголовок"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Home\Index.cshtml:12
+msgid "Together we are the Wisdom and the Power!"
+msgstr "Вместе мы Мудрость и Сила!"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleGroupVM.cs:24
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:137
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVM.cs:25
+msgid "Too long"
+msgstr "Слишком длинно"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\DataLayer\ViewModels\ArticleVersionVMs.cs:88
+msgid "Under review"
+msgstr "В процессе одобрения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ListVersions.cshtml:9
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\Version.cshtml:12
+msgid "Version"
+msgstr "Версия"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:79
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ViewVersion.cshtml:6
+msgid "View"
+msgstr "Просмотр"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\Current.cshtml:20
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\View.cshtml:11
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewPartial.cshtml:6
+msgid "View Article"
+msgstr "Просмотреть статью"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:54
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:58
+msgid "Voting is closed"
+msgstr "Голосование закрыто"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ConfirmVote.cshtml:5
+msgid "Voting is closed!"
+msgstr "Голосование закрыто"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:169
+msgid "Yes"
+msgstr "Да"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:62
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:66
+msgid "Your vote - accept"
+msgstr "Ваш голос - За"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Articles\_ViewReview.cshtml:69
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\Shared\_ViewAlterations.cshtml:73
+msgid "Your vote - reject"
+msgstr "Ваш голос - против"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ListVersions.cshtml:33
+msgid "Zero altering counter"
+msgstr "Обнулить счетчик до изменения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:19
+msgid "Zero altering date counter"
+msgstr "Обнулить счетчик до изменения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechArticles\_ListVersions.cshtml:27
+msgid "Zero review counter"
+msgstr "Обнулить счетчик до одобрения"
+
+#: D:\Projects\Daisy\Манифест\ManifestMVC\ManifestMVC\Views\TechVersions\_ConfirmAction.cshtml:16
+msgid "Zero review date counter"
+msgstr "Обнулить счетчик до одобрения"
+
+#~ msgid "Closed on"
+#~ msgstr "Закрыто"
+
+#~ msgid "Created on"
+#~ msgstr "Создано"
+
+#~ msgid "Justification"
+#~ msgstr "Обоснование"
+
+#~ msgid "Title is Required"
+#~ msgstr "Требуется заголовок!"
+
+#~ msgid "Title too long!"
+#~ msgstr "Заголовок слишком длинный!"
+

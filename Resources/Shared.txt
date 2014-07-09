@@ -1,0 +1,8 @@
+Action_Index=Entities Index
+Action_BackToList=Back to list
+Action_Create=Create entity
+Action_Edit=Edit entity
+Action_Close=Close entity
+Action_Details=Details of an entity
+Action_Save=Save entity
+Statement_CloseConfirmation=Are you sure you want to close this?

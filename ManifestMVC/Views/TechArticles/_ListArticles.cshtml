@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ArticleCurrentSummaryVM>
+
+@{
+    var groupedArticles = (from acs in Model group acs by acs.Group).OrderBy(x => x.Key.SortOrder);
+}
+
+@foreach (var group in groupedArticles)
+{
+        <h4>
+            @group.Key.Name
+        </h4>
+
+<table class="table table-hover col-md-12">
+    <tbody id="main-table">
+
+    @foreach (var item in group)
+    {
+    
+    <tr class="action-redirect" data-action="/TechArticles/VersionsIndex" data-id="@item.ArticleID">
+        <td>
+            <p>
+                <strong>
+                    <a href="/TechArticles/VersionsIndex/@(item.ArticleID)">@item.Title</a>
+                </strong>
+            </p>
+            <p>
+                <small>
+                    @item.DisplayArticleStatus -
+                    @if (item.CurrentID > 0) {
+                        <a href="/TechVersions/Version/@(item.CurrentID)?act=view">
+                            @item.DisplayCurrentVersionStatus
+                        </a>
+                    }
+                    else {
+                        @item.DisplayCurrentVersionStatus
+                    }
+                    -
+                    @if (item.NewID > 0) {
+                        <a href="/TechVersions/Version/@(item.NewID)?act=view">
+                            @item.DisplayNewVersionTechnicalStatus
+                        </a>
+                    }
+                    else {
+                        @item.DisplayNewVersionTechnicalStatus
+                    }
+                </small>
+            </p>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
+}
+

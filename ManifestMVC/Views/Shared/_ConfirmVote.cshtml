@@ -1,0 +1,71 @@
+﻿@model ManifestMVC.ViewModels.Shared.ConfirmVoteModel
+
+<div>
+@if (!Model.VotingIsOpen) {
+    <h4>[[[Voting is closed!]]]</h4>
+}
+else if (!ViewBag.IsAuthenticated) {
+    <h4>[[[Need to login to vote!]]]</h4>
+}
+else {
+    if (Model.AlreadyVoted) {
+        <h4>[[[Already voted!]]]</h4>
+    }
+    else {
+        if (Model.Vote == VoteResult.Accept) {
+            <h4>[[[Accept Alteration?]]]</h4>
+        }
+        if (Model.Vote == VoteResult.Reject)
+        {
+            <h4>[[[Reject Alteration?]]]</h4>
+        }
+    }
+}
+
+@using (Html.BeginForm(Model.Action, Model.Controller))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("itemId", Model.ItemId)
+    @Html.Hidden("vote", Model.Vote)
+
+    <div>
+    @if (Model.Vote == VoteResult.Accept)
+    {
+        <div class="form-group">        
+            @if (Model.VotingIsOpen && ViewBag.IsAuthenticated && !Model.AlreadyVoted)
+            {
+                if (Html.IsDebug())
+                {
+                    @Html.TextBox("testVotesNumber", "", new { size = 2 })
+                }
+                <button type="submit" id="btnAccept" name="submitButton" value="accept" class="btn btn-success">
+                    [[[Accept]]]
+                </button>
+            }
+            <a href="#" class="btn btn-default" data-toggle="popover">
+                [[[Cancel]]]
+            </a>
+        </div>
+    }
+    @if (Model.Vote == VoteResult.Reject)
+    {
+        <div class="form-group">        
+            @if (Model.VotingIsOpen && ViewBag.IsAuthenticated && !Model.AlreadyVoted)
+            {
+                if (Html.IsDebug())
+                {
+                    @Html.TextBox("testVotesNumber", "", new { size = 2 })
+                }
+                <button type="submit" id="btnReject" name="submitButton" value="reject" class="btn btn-danger">
+                    [[[Reject]]]
+                </button>
+            }
+            <a href="#" class="btn btn-default" data-toggle="popover">
+                [[[Cancel]]]
+            </a>
+        </div>
+    }
+    </div>
+}
+
+</div>

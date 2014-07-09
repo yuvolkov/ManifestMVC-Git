@@ -1,0 +1,51 @@
+﻿@model Tuple<ArticleCurrentSummaryWithVotesVM, IEnumerable<AlterationWithVotesVM>, ModelWithAction<AlterationVM>>
+
+@{
+    ViewBag.Title = "[[[Article]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    var artCurSummary = Model.Item1;
+    var alterationsWithVotes = Model.Item2;
+    var newAlteration = Model.Item3;
+    
+    bool showCurrent = artCurSummary.CurrentStatus == ArticleVersionStatus.Current ||               // either current
+                       (artCurSummary.CurrentStatus == ArticleVersionStatus.BeingAltered &&         // or is being altered but no new version is ready
+                        (artCurSummary.NewID == null || artCurSummary.NewStatus != ArticleVersionStatus.BeingReviewed));
+}
+
+
+@if (showCurrent)
+{
+<h4>
+    [[[View Article]]] - @(artCurSummary.Title)
+</h4>
+}
+else
+{
+<h4>
+    [[[Review new version]]] - @(artCurSummary.Title)
+</h4>
+}
+
+
+<ul class="pager">
+  <li class="previous">
+    <a href="/">&larr; [[[Back]]]</a>
+  </li>
+</ul>
+
+
+@if (showCurrent)
+{
+    Html.RenderPartial(
+        "_ViewCurrent", Tuple.Create(artCurSummary, alterationsWithVotes, newAlteration),
+        new ViewDataDictionary() { { "IsAuthenticated", ViewData["IsAuthenticated"] } });
+}
+else
+{
+    Html.RenderPartial(
+        "_ViewReview", Tuple.Create(artCurSummary, alterationsWithVotes),
+        new ViewDataDictionary() { { "IsAuthenticated", ViewData["IsAuthenticated"] } });
+}
+
+

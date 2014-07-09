@@ -1,0 +1,184 @@
+﻿@model Tuple<ArticleCurrentSummaryWithVotesVM, IEnumerable<AlterationWithVotesVM>>
+
+@{
+    var artCurSummary = Model.Item1;
+    var alterationsWithVotes = Model.Item2;
+
+    var newVersion = artCurSummary.NewVersion;
+
+    var votingIsOpen =
+        artCurSummary.NewStatus == ArticleVersionStatus.BeingReviewed;
+
+    var alreadyVoted = artCurSummary.NewReviewVoteResult != null;
+
+    // для голосования
+
+    string alteration_class = "info";
+    if (artCurSummary.IsReviewSandbox.Value)
+    {
+        alteration_class = "default";
+    }
+    else if (artCurSummary.IsReviewRejected.Value)
+    {
+        alteration_class = "danger";
+    }
+    else if (artCurSummary.IsReviewAccepted.Value)
+    {
+        alteration_class = "success";
+    }
+
+
+    string accept_vote_color = "muted";
+    string reject_vote_color = "muted";
+
+    string vote_tooltip = null;
+
+    if (votingIsOpen &&
+        ViewBag.IsAuthenticated &&
+        artCurSummary.NewReviewVoteResult == null)
+    {
+        vote_tooltip = "[[[Not yet voted]]]";
+
+        accept_vote_color = "primary";
+        reject_vote_color = "primary";
+    }
+    else
+    {
+        if (!ViewBag.IsAuthenticated)
+        {
+            vote_tooltip = "[[[Please login to vote]]]";
+        }
+
+        if (!votingIsOpen)
+        {
+            vote_tooltip = "[[[Voting is closed]]]";
+        }
+
+        if (artCurSummary.NewReviewVoteResult == VoteResult.Accept)
+        {
+            accept_vote_color = "success";
+            //reject_vote_color = "hide";
+
+            vote_tooltip = "<i class=\"fa fa-check-circle fa-2x text-" + accept_vote_color + "\" style=\"vertical-align: middle\"></i> [[[Your vote - accept]]]";
+        }
+        if (artCurSummary.NewReviewVoteResult == VoteResult.Reject)
+        {
+            //accept_vote_color = "hide";
+            reject_vote_color = "danger";
+
+            vote_tooltip = "<i class=\"fa fa-times-circle fa-2x text-" + reject_vote_color + "\" style=\"vertical-align: middle\"></i> [[[Your vote - reject]]]";
+        }
+    }
+
+}
+
+
+<!-- Nav tabs -->
+<div class="row">
+    <ul class="nav nav-pills pull-left">
+      <li class="active"><a href="#view" data-toggle="tab">[[[View]]]</a></li>
+      <li><a href="#compare" data-toggle="tab">[[[Compare]]]</a></li>
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="view">
+
+        <div class="row col-md-8 col-md-offset-2">
+            <label>@artCurSummary.NewVersion.DisplayStatus</label>
+            <div>
+                @Html.Raw(artCurSummary.NewVersion.Text.Replace("\n","<br>"))
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-pane" id="compare">
+
+        <div class="col-md-6">
+            <label>[[[Previous Version]]]</label>
+        </div>
+        <div class="col-md-6">
+            <label>@artCurSummary.NewVersion.DisplayStatus</label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6">
+            @if (artCurSummary.NewVersion.SourceTextWithMarkup == null)
+            {
+                <label class="help-block">([[[No previous version exists]]])</label>
+            }
+            else {
+                @Html.Raw(artCurSummary.NewVersion.SourceTextWithMarkup.Replace("\n", "<br>"))
+            }
+        </div>
+        <div class="col-md-6">
+            @Html.Raw(artCurSummary.NewVersion.TextWithMarkup.Replace("\n", "<br>"))
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<label>[[[Accepted alterations]]]</label>
+
+@{
+    // no voting
+    Html.RenderPartial("_ViewAlterations", Tuple.Create(false, alterationsWithVotes), new ViewDataDictionary() { { "IsAuthenticated", ViewData["IsAuthenticated"] } });
+}
+
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-@alteration_class">
+        <div class="panel-heading">
+            @*<label>[[[Article Version %0 review|||@newVersion.VersionString]]]</label>*@
+            <label>@artCurSummary.DisplayNewVersionStatus</label>
+        </div>
+        <div class="panel-body">
+    @if (!alreadyVoted)
+    {
+            <label>
+                [[[After you have carefuly reviewed new article version with new altertions, please consider the following:]]]<br /><br />
+                [[[Is the new version better than previous one?]]]
+            </label>
+    }
+    else
+    {
+            <div class="col-md-12 text-center has-tooltip"
+                 data-toggle="tooltip" title="@vote_tooltip">
+                    <div><label>[[[Review results]]]</label></div>
+                    <div>
+                        <span class="badge alert-success">@artCurSummary.NewReviewTotalAcceptVotes</span>
+                        /
+                        <span class="badge alert-danger">@artCurSummary.NewReviewTotalRejectVotes</span>
+                    </div>
+            </div>
+    }
+        </div>
+    @if (!alreadyVoted)
+    {
+        <div class="panel-footer">
+            <div class="pull-right has-tooltip"
+                 data-toggle="tooltip" title="@vote_tooltip">
+                        <a href="#" class="btn btn-success btn-lg action-ajax-popover" 
+                           data-action="/Articles/_ConfirmReviewVote"
+                           data-id="@newVersion.ArticleID" 
+                           data-params='{"votingIsOpen":"@(votingIsOpen)", "alreadyVoted":"@(alreadyVoted)", "vote":"accept"}'
+                           data-container="body" data-placement="top" data-toggle="popover">
+                            [[[Yes]]]
+                        </a>
+                        <a href="#" class="btn btn-danger btn-lg action-ajax-popover" 
+                           data-action="/Articles/_ConfirmReviewVote"
+                           data-id="@newVersion.ArticleID"
+                           data-params='{"votingIsOpen":"@(votingIsOpen)", "alreadyVoted":"@(alreadyVoted)", "vote":"reject"}'
+                           data-container="body" data-placement="top" data-toggle="popover">
+                            [[[No]]]
+                        </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    }
+    </div>
+</div>
+<div class="clearfix"></div>

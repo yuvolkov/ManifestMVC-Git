@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "[[[Technical Articles Index]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="pager">
+  <li class="previous">
+    <a href="/">&larr; [[[Back]]]</a>
+  </li>
+</ul>
+
+<div class="col-md-9">
+    <h2>
+        [[[Technical Articles Index]]]
+    </h2>
+</div>
+<div class="col-md-3">
+    <div class="pull-right">
+        <!-- It will reload when the request gets completed -->
+        <!-- and meanwhile we will enjoy dark screen of the modal window -->
+        <button class="btn btn-primary action-ajax-modal @(ViewBag.PendingChangesCount > 0 ? "" : "disabled" )"
+                data-action="/TechArticles/_ProcessPendingChanges">
+            [[[Process pending changes]]]
+            <span class="badge">@ViewBag.PendingChangesCount</span>
+        </button>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <label>[[[Articles]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <button type="button" class="btn btn-default action-ajax-modal" data-action="/TechArticles/_EditArticle" data-id="0">
+            [[[Add New Article]]]
+        </button>
+        <div class="btn-group pull-right" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" id="show-closed-articles">[[[Show closed]]]
+            </label>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body" id="main-table">
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var updateArticlesList = function () {
+                var isShowClosed = $('#show-closed-articles').is(':checked');
+                AjaxActions.fireAjaxAction("/TechArticles/_ListArticles", null, { isShowClosed: isShowClosed }, "#main-table");
+            };
+
+            $("#show-closed-articles").change(updateArticlesList);
+
+            updateArticlesList();
+        });
+    </script>
+}

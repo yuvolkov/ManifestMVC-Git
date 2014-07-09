@@ -1,0 +1,64 @@
+﻿@model  ModelWithAction<ArticleVersionVM>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">
+@switch(Model.Action) {
+    case "review":
+        <span>[[[Send to review]]]</span>
+        break;
+    case "updateCurrent":
+        if (Model.VM.VersionString == "1.0") {
+            <span>[[[Publish as a first version]]]</span>
+        }
+        break;
+    case "zero-review-date":
+        <span>[[[Zero review date counter]]]</span>
+        break;
+    case "zero-altering-date":
+        <span>[[[Zero altering date counter]]]</span>
+        break;
+}
+    </h4>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.VM.ID)
+    @Html.HiddenFor(model => model.VM.ArticleID)
+    @Html.HiddenFor(model => model.Action)
+    
+    <div class="modal-body">
+    @switch (Model.Action)
+    {
+        case "review":
+            <div class="form-horizontal">
+                <h4 class="form-group">[[[Are you sure you want to send it to review?]]]</h4>
+            </div>
+            break;
+        case "updateCurrent":
+            if (Model.VM.VersionString == "1.0") {
+            <div class="form-horizontal">
+                <h4 class="form-group">[[[Are you sure you want to publish this version as a first version?]]]</h4>
+            </div>
+            }
+            break;
+        case "zero-review-date":
+            <div class="form-horizontal">
+                <h4 class="form-group">[[[Are you sure you want to end review now?]]]</h4>
+            </div>
+            break;
+        case "zero-altering-date":
+            <div class="form-horizontal">
+                <h4 class="form-group">[[[Are you sure you want to start altering now?]]]</h4>
+            </div>
+            break;
+    }
+    </div>
+
+    <div class="modal-footer">
+        <input type="submit" value="[[[Confirm]]]" class="btn btn-primary" />
+        <button type="button" class="btn btn-default" data-dismiss="modal">[[[Cancel]]]</button>
+    </div>
+}

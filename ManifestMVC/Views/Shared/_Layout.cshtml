@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - [[[Manifesto of Ukraine]]]</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modal-ajax-container"></div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-top">
+            @*<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("[[[Manifesto]]]", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>*@
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>
+                          @(DataLayer.Repositories.Settings.ParametersRepo.Instance.SubdomainsTitles[DataLayer.Repositories.Settings.RequestParameters.SubdomainName])
+                          </strong><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          @foreach(var kvp in DataLayer.Repositories.Settings.ParametersRepo.Instance.SubdomainsTitles)
+                          {
+                              if (kvp.Key == DataLayer.Repositories.Settings.RequestParameters.SubdomainName)
+                              {
+                                  continue;
+                              }
+                              var href = 
+                                  (kvp.Key == "default" ? "" : kvp.Key + ".") + 
+                                  DataLayer.Repositories.Settings.ConfigRepo.Instance.Host;
+                        @*<li class="disabled"><a href="#">Манифест</a></li>*@
+                            <li><a href="http://@href">@(kvp.Value)</a></li>
+                          }
+                      </ul>
+                    </li>
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    <li>@Html.ActionLink("[[[About]]]", "About", "Home")</li>
+                    <li>@Html.ActionLink("[[[FAQ]]]", "FAQ", "Home")</li>
+                    <li>@Html.ActionLink("[[[Slides]]]", "Slides", "Home")</li>
+                    <li>@Html.ActionLink("[[[Contact]]]", "Contact", "Home")</li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="@(Culture.Substring(0, 2) == "ru" ? "active" : "")"><a class="language" data-lang="ru" href="#">ru</a></li>
+                    <li class="@(Culture.Substring(0, 2) == "en" ? "active" : "")"><a class="language" data-lang="en" href="#">en</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - [[[Manifesto]]]</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquerycookie")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/my")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

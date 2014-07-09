@@ -1,0 +1,50 @@
+﻿@model Tuple<ArticleCurrentSummaryWithVotesVM, IEnumerable<AlterationWithVotesVM>, ModelWithAction<AlterationVM>>
+
+@{
+    var artCurSummary = Model.Item1;
+    var alterationsWithVotes = Model.Item2;
+    var newAlteration = Model.Item3;
+
+    bool acceptsAlterations = artCurSummary.CurrentStatus == ArticleVersionStatus.Current;
+    
+    bool beingAlteredButNoNew   = artCurSummary.CurrentStatus == ArticleVersionStatus.BeingAltered &&        // current is being altered but no new version is ready
+                                  (artCurSummary.NewID == null || artCurSummary.NewStatus != ArticleVersionStatus.BeingReviewed);
+
+}
+
+@if (beingAlteredButNoNew)
+{
+<div class="alert alert-warning alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    [[[New version is in process, please wait until all accepted alterations get incorporated]]].
+</div>
+}
+
+
+<div class="row col-md-8 col-md-offset-2">
+    @Html.Raw(artCurSummary.CurrentVersion.Text.Replace("\n","<br>"))
+</div>
+
+<div class="clearfix"></div>
+
+@if (acceptsAlterations)
+{
+    <div class="ajax-container">
+        @if (artCurSummary.CurrentStatus == ArticleVersionStatus.Current) {
+            Html.RenderPartial(
+                "_EditAlteration", newAlteration, 
+                new ViewDataDictionary() { 
+                    { "IsAuthenticated", ViewData["IsAuthenticated"] } });
+        }
+    </div>
+
+    <label>[[[New alterations]]]</label>
+}
+else if (beingAlteredButNoNew)
+{  
+    <label>[[[Accepted alterations]]]</label>
+}
+
+@{
+    Html.RenderPartial("_ViewAlterations", Tuple.Create(acceptsAlterations, alterationsWithVotes), new ViewDataDictionary() { { "IsAuthenticated", ViewData["IsAuthenticated"] } });
+}

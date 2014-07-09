@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ArticleVersionVM>
+
+@foreach (var item in Model) {
+    <tr class="action-redirect" data-action="/TechVersions/Version" data-id="@item.ID" data-params='{"act":"view"}'>
+        <td class="row">
+            <div>
+                <p>
+                    <strong>
+                        <a href="/TechVersions/Version/@item.ID?act=view">[[[Version]]] - @item.DisplayVersionString</a>
+                    </strong>
+                </p>
+                <p>
+                    <small>
+                        @item.DisplayStatus
+                    </small>
+                </p>
+            </div>
+    @if (item.CanEdit) {
+            <button type="button" class="btn btn-default pull-right action-redirect"
+                    data-action="/TechVersions/Version" data-id="@item.ID" data-params='{"act":"edit"}'>
+                [[[Edit Article Version]]]
+            </button>
+    }
+    @if (item.Status == ArticleVersionStatus.BeingReviewed && item.DateOfReviewEnding > DateTime.Now) {
+            <button type="button" class="btn btn-danger pull-right action-ajax-modal"
+                    data-action="/TechVersions/_ConfirmAction" data-id="@item.ID" data-params='{"act":"zero-review-date"}'>
+                [[[Zero review counter]]]
+            </button>
+    }
+    @if (item.Status == ArticleVersionStatus.Current && item.DateOfAltering > DateTime.Now) {
+            <button type="button" class="btn btn-danger pull-right action-ajax-modal"
+                    data-action="/TechVersions/_ConfirmAction" data-id="@item.ID" data-params='{"act":"zero-altering-date"}'>
+                [[[Zero altering counter]]]
+            </button>
+    }
+        </td>
+    </tr>
+}
+

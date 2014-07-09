@@ -1,0 +1,77 @@
+﻿@model ArticleCurrentSummaryVM
+
+@{
+    ViewBag.Title = "[[[Technical article versions index]]]";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>[[[Technical article versions index]]]</h2>
+
+<ul class="pager">
+  <li class="previous">
+    <a href="/TechArticles/ArticlesIndex/@(Model.ArticleID)">&larr; [[[Back]]]</a>
+  </li>
+</ul>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <label>@Html.DisplayTextFor(model => model.Title)</label>
+        @if (Model.CanEditArticle) {
+            <div class="pull-right">
+                <button type="button" class="btn btn-warning action-ajax-modal" data-action="/TechArticles/_EditArticle" data-id="@Model.ArticleID">
+                    [[[Edit Article]]]
+                </button>
+                <button type="button" class="btn btn-danger action-ajax-modal" data-action="/TechArticles/_CloseArticle" data-id="@Model.ArticleID">
+                    [[[Close Article]]]
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        }
+    </div>
+    <div class="panel-body">
+        @*@Html.LabelFor(model => model.Article.Description, new { @class = "control-label" })
+        <p>
+            @Html.DisplayTextFor(model => model.Article.Description)
+        </p>*@
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <label>[[[Article Versions]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        @if (Model.CanAddNewVersion) {
+            <button type="button" class="btn btn-warning action-redirect"
+                    data-action="/TechVersions/Version" data-id="0" data-params='{"articleID":@Model.ArticleID,"act":"edit"}'>
+                [[[Add New Article Version]]]
+            </button>
+        }
+        <div class="btn-group pull-right" data-toggle="buttons">
+            <label class="btn btn-default pull-right">
+                <input type="checkbox" id="show-rejected-versions">[[[Show rejected]]]
+            </label>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover col-md-12">
+            <tbody id="main-table">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var updateArticleVersionsList = function () {
+                var isShowRejected = $('#show-rejected-versions').is(':checked');
+                AjaxActions.fireAjaxAction("/TechArticles/_ListVersions", "@Model.ArticleID", { isShowRejected: isShowRejected }, "#main-table");
+            };
+
+            $("#show-rejected-versions").change(updateArticleVersionsList);
+
+            updateArticleVersionsList();
+        });
+    </script>
+}
